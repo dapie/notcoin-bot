@@ -1,6 +1,16 @@
-Donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
+<p align="center">
+    <picture align="center">
+        <img width="180" height="104" src="logo.png">
+    </picture><h3 align="center">Notcoin autoclicker</h3>
+</p>
+<h5 align="center">
+    You can donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
+</h5>
+<p align="center">
+    Small script to automatically clicks on coin, collect rockets and use available boosts. Works well in one session. You can change a timeouts by changing variables if you need.
+</p>
 
-## Run Notcoin in browser
+### Run Notcoin in browser
 This method allows you to use only one session (you don't need to recreate it everytime)
 
 1. Open [Telegram Web](https://web.telegram.org)
@@ -13,7 +23,7 @@ This method allows you to use only one session (you don't need to recreate it ev
 
 If you can see the coin and doesn't see an message that you should use mobile then everything is ok
 
-## Run autoclicker
+### Run autoclicker
 (warn) Look at `click` requests (if it is start to fail - you should to change session)
 
 1. Open Dev Tools (`Command+Option+I / F12 or Control+Shift+I`)
@@ -25,9 +35,7 @@ If you can see the coin and doesn't see an message that you should use mobile th
 
 If something breaks, just reload the page and run autoclicker again from first step
 
-## Script
-
-Script automatically clicks on coin, boosts, uses available boosts. You can change a timeouts by changing variables if you need.
+### Script
 
 ```javascript
 const container = temp1;
