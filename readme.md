@@ -55,6 +55,8 @@ const coinClick = async () => {
     const rocketProps = getReactProps(rocket);
     if (rocketProps) rocketProps.onClick();
 
+    if (intervalId === null) return;
+
     // Coin click
     if (score > MIN_SCORE && clicksCount < MAX_CLICKS_PER_ITERATION && coin) {
         clicksCount++;
@@ -68,13 +70,14 @@ const coinClick = async () => {
         console.info('%c INFO: idle time', 'color: #64b5f6');
         if (score < MIN_SCORE) boostClick()
         await delay(getIdleTime());
-        if (intervalId === null) return;
         console.info('%c INFO: trying again', 'color: #64b5f6');
         start();
     }
 }
 
-const start = () => intervalId = setInterval(coinClick, getRandomClickTime());
+const start = () => {
+    intervalId = setInterval(coinClick, getRandomClickTime());
+};
 const end = () => {
     clearInterval(intervalId);
     intervalId = null;
