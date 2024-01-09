@@ -28,8 +28,6 @@ const MAX_CLICKS_PER_ITTERATION = 100;
 const coinClick = async () => {
     const coin = document.querySelector('div[class^="_notcoin"]');
     const scoreElement = document.querySelector('div[class^="_scoreCurrent"]');
-    const buttonGroup = document.querySelector('div[class^="_buttonGroup"]');
-    const boostButton = buttonGroup && buttonGroup.lastChild;
     const score = scoreElement ? parseInt(scoreElement.textContent) : 0;
 
     // Rocket click

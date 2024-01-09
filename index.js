@@ -13,8 +13,6 @@ const MAX_CLICKS_PER_ITTERATION = 100;
 const coinClick = async () => {
     const coin = document.querySelector('div[class^="_notcoin"]');
     const scoreElement = document.querySelector('div[class^="_scoreCurrent"]');
-    const buttonGroup = document.querySelector('div[class^="_buttonGroup"]');
-    const boostButton = buttonGroup && buttonGroup.lastChild;
     const score = scoreElement ? parseInt(scoreElement.textContent) : 0;
 
     // Rocket click
@@ -59,7 +57,7 @@ const boostClick = async () => {
     const dailyTask = document.querySelector('div[class^="_taskDailyItem"]:not([class*="_completed"])');
     const dailyBoost = getReactProps(dailyTask)
     const taskCarousel = document.querySelector('div[class^="_taskCarousel"][class*="_willChange"]');
-    const boost = getReactProps(taskCarousel.querySelector('div[class*="_rippleEffect"]'));
+    const boost = getReactProps(taskCarousel && taskCarousel.querySelector('div[class*="_rippleEffect"]'));
     const boosterButton = dailyBoost || boost;
     if (boosterButton) {
         boosterButton.onClick();
