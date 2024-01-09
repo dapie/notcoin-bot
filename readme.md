@@ -3,7 +3,10 @@ Donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
 ## Run Notcoin in browser
 
 https://github.com/SashaTail/notcoin_automation
+
 (warn) I am using iPhone 14 Pro Max dimensions in devtools.
+
+(warn) Look at click requests (if it is start to fail - you should to change session)
 
 ## Script
 
@@ -71,7 +74,7 @@ const boostClick = async () => {
     const dailyTask = document.querySelector('div[class^="_taskDailyItem"]:not([class*="_completed"])');
     const dailyBoost = getReactProps(dailyTask)
     const taskCarousel = document.querySelector('div[class^="_taskCarousel"][class*="_willChange"]');
-    const boost = getReactProps(taskCarousel.querySelector('div[class*="_rippleEffect"]'));
+    const boost = getReactProps(taskCarousel && taskCarousel.querySelector('div[class*="_rippleEffect"]'));
     const boosterButton = dailyBoost || boost;
     if (boosterButton) {
         boosterButton.onClick();
