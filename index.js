@@ -1,3 +1,4 @@
+const container = temp1;
 let intervalId;
 let clicksCount = 0;
 const delay = (time) => new Promise(r => setTimeout(r, time));
@@ -9,19 +10,19 @@ const getIdleTime = () => Math.floor(Math.random() * 18222 + 12111);
 const getRandomClickTime = () => Math.floor(Math.random() * 142 + 12);
 
 const MIN_SCORE = 500;
-const MAX_CLICKS_PER_ITTERATION = 100;
+const MAX_CLICKS_PER_ITERATION = 100;
 const coinClick = async () => {
-    const coin = document.querySelector('div[class^="_notcoin"]');
-    const scoreElement = document.querySelector('div[class^="_scoreCurrent"]');
+    const coin = container.querySelector('div[class^="_notcoin"]');
+    const scoreElement = container.querySelector('div[class^="_scoreCurrent"]');
     const score = scoreElement ? parseInt(scoreElement.textContent) : 0;
 
     // Rocket click
-    const rocket = document.querySelector('img[class^="_root"]');
+    const rocket = container.querySelector('img[class^="_root"]');
     const rocketProps = getReactProps(rocket);
     if (rocketProps) rocketProps.onClick();
 
     // Coin click
-    if (score > MIN_SCORE && clicksCount < MAX_CLICKS_PER_ITTERATION && coin) {
+    if (score > MIN_SCORE && clicksCount < MAX_CLICKS_PER_ITERATION && coin) {
         clicksCount++;
         const {onTouchStart, onTouchEnd} = getReactProps(coin);
         onTouchStart(getEvent());
@@ -48,21 +49,21 @@ const end = () => {
 const BOOST_CLICK_TIMEOUT = 1500;
 const boostClick = async () => {
     console.info('%c INFO: open boosts', 'color: #64b5f6');
-    const buttonGroup = document.querySelector('div[class^="_buttonGroup"]');
+    const buttonGroup = container.querySelector('div[class^="_buttonGroup"]');
     const boostButton = buttonGroup && getReactProps(buttonGroup.lastChild);
     await delay(BOOST_CLICK_TIMEOUT);
     if (!boostButton) return;
     boostButton.onClick();
     await delay(BOOST_CLICK_TIMEOUT);
-    const dailyTask = document.querySelector('div[class^="_taskDailyItem"]:not([class*="_completed"])');
+    const dailyTask = container.querySelector('div[class^="_taskDailyItem"]:not([class*="_completed"])');
     const dailyBoost = getReactProps(dailyTask);
-    const taskCarousel = document.querySelector('div[class^="_taskCarousel"][class*="_willChange"]');
+    const taskCarousel = container.querySelector('div[class^="_taskCarousel"][class*="_willChange"]');
     const boost = getReactProps(taskCarousel && taskCarousel.querySelector('div[class*="_rippleEffect"]'));
     const boosterButton = dailyBoost || boost;
     if (boosterButton) {
         boosterButton.onClick();
         await delay(BOOST_CLICK_TIMEOUT);
-        const getButton = getReactProps(document.querySelector('button[class*="_typeBlue"]'));
+        const getButton = getReactProps(container.querySelector('button[class*="_typeBlue"]'));
         if(getButton) getButton.onClick();
         await delay(BOOST_CLICK_TIMEOUT);
         console.info('%c DONE: boosted', 'color: #bada55');
