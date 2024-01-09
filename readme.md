@@ -2,6 +2,7 @@ Donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
 
 ## Run Notcoin in browser
 This method allows you to use only one session (you don't need to recreate it everytime)
+
 1. Open [Telegram Web](https://web.telegram.org)
 2. Open [Notcoin Bot](https://web.telegram.org/k/#@notcoin_bot)
 3. Open Dev Tools (`Command+Option+I / F12 or Control+Shift+I`)
@@ -14,6 +15,7 @@ If you can see the coin and doesn't see an message that you should use mobile th
 
 ## Run autoclicker
 (warn) Look at `click` requests (if it is start to fail - you should to change session)
+
 1. Open Dev Tools (`Command+Option+I / F12 or Control+Shift+I`)
 2. Press `Command+Shift+C / Control+Shift+C` to toggle Inspect Element Mode
 3. Select an window frame with openned Notcoin Bot.
@@ -21,11 +23,11 @@ If you can see the coin and doesn't see an message that you should use mobile th
 5. Click Store as global variable (it should create `temp1` variable in console)
 6. Insert the script and press enter
 
+If something breaks, just reload the page and run autoclicker again from first step
+
 ## Script
 
 Script automatically clicks on coin, boosts, uses available boosts. You can change a timeouts by changing variables if you need.
-
-## Script
 
 ```javascript
 const container = temp1;
