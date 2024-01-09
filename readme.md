@@ -25,7 +25,7 @@ If you can see the coin and doesn't see an message that you should use mobile th
 
 1. Open bot window in Noticon Bot
 2. Open Dev Tools (`Command+Option+I / F12 or Control+Shift+I`)
-3. Change [JavaScript Context](https://developer.chrome.com/docs/devtools/console/reference#context), press on `top` selector at the top of console and choose `clicker`
+3. Change [JavaScript Context](https://developer.chrome.com/docs/devtools/console/reference#context) by pressing `top` selector at the top of console and choose `clicker`
 4. Insert the script and press enter
 
 If something breaks, just reload the page and run autoclicker again from first step
