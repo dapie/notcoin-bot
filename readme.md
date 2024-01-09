@@ -3,11 +3,11 @@ Donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
 ## Run Notcoin in browser
 
 https://github.com/SashaTail/notcoin_automation
-(warn) I am using iPhone 14 Pro Max dimentions in devtools.
+(warn) I am using iPhone 14 Pro Max dimensions in devtools.
 
 ## Script
 
-Script automaticaly clicks on coin, boosts, uses avaliable boosts.
+Script automatically clicks on coin, boosts, uses available boosts.
 
 ```javascript
 let intervalId;
