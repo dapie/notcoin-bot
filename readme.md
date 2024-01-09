@@ -3,9 +3,6 @@
         <img width="180" height="104" src="logo.png">
     </picture><h3 align="center">Notcoin autoclicker</h3>
 </p>
-<h5 align="center">
-    You can donate TON: UQA4uD3Mq-yxPlrO7Vv_sTCX_jysYaTplv4f_TUdV9EuK2UI
-</h5>
 <p align="center">
     Small script to automatically clicks on coin, collect rockets and use available boosts. Works well in one session. You can change a timeouts by changing variables if you need.
 </p>
