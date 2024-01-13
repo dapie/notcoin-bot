@@ -139,27 +139,29 @@ if(location.host === 'web.telegram.org') {
 }
 
 if(location.host === 'clicker.joincommunity.xyz') {
-    waitForElm('div[class^="_notcoin"]', 5000).then(start).catch(() => {
+    waitForElm('div[class^="_notcoin"]', 10000).then(start).catch(() => {
       console.info('%c INFO: not started. reload window', 'color: #64b5f6');
       location.reload()
     });
 
     GM_setValue('shouldRefresh', false);
 
+    const requestRefresh = () => {
+      console.info('%c INFO: click request failed', 'color: #64b5f6');
+      GM_setValue('shouldRefresh', true);
+    }
+
     const {fetch: origFetch} = window.unsafeWindow;
     window.unsafeWindow.fetch = async (...args) => {
       try {
-        return await origFetch(...args)
+        const response = await origFetch(...args);
+        if (response && response.status === 401) requestRefresh();
+        return response;
       } catch (error) {
         if(!args[0].signal.aborted) {
-          console.info('%c INFO: click request failed', 'color: #64b5f6');
-          GM_setValue('shouldRefresh', true);
+          requestRefresh()
         }
         throw error
       }
     };
 }
-
-
-
-
